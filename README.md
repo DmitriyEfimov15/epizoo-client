@@ -38,6 +38,31 @@ docker compose up --build -d
 
 Для e2e без Chrome задайте `PLAYWRIGHT_CHANNEL=chromium` и установите браузер командой `pnpm exec playwright install chromium`.
 
+## Деплой
+
+Схема как в jobadapt: GitHub Actions → registry → SSH → Docker Compose v2. Стенд один — prod на `epizoo-demo-stand-2026.ru` (клиент, API по `/api/`).
+
+- `.github/workflows/checks.yml` — pull request и push в `main`/`dev`: ESLint и steiger (FSD), typecheck, сборка и тесты. E2E Playwright в CI не запускаются — им нужен работающий API.
+- `.github/workflows/release-deploy.yml` — опубликованный GitHub Release или ручной запуск с тега (Use workflow from → Tags): проверки, сборка образа `<версия>` и `latest` (версия — тег без префикса `v`) и деплой. Ручной запуск с ветки ничего не собирает.
+
+Деплой по SSH: в `DEPLOY_DIR` копируются `compose.prod.yaml` и `nginx.host.conf`, контейнер обновляется (`docker compose pull` → `up -d --wait` до healthcheck), затем конфиг ставится в `/etc/nginx/conf.d/epizoo.conf`. Если `nginx -t` не прошёл, возвращается прошлая версия конфига и деплой падает. В конце — `docker image prune -af`.
+
+GitHub environment `release`:
+
+| Secret | Значение |
+|---|---|
+| `REGISTRY_URL` | registry host[:port], без https:// |
+| `REGISTRY_REPO` | путь Docker-репозитория клиента (не тот же, что у сервера) |
+| `REGISTRY_USER`, `REGISTRY_TOKEN` | доступ к registry |
+| `SSH_HOST`, `SSH_USER`, `SSH_KEY` | сервер деплоя |
+| `DEPLOY_DIR` | абсолютный путь каталога на сервере (не тот же, что у сервера) |
+
+Сервер: bash, Docker с плагином Compose v2 и nginx; пользователю деплоя — `sudo` без пароля для `cp`, `rm`, `nginx -t` и `systemctl reload nginx`. TLS-сертификат лежит в `/etc/ssl/epizoo-demo-stand-2026/certificate.crt` и `/etc/ssl/epizoo-demo-stand-2026/private.key`.
+
+Порты на `127.0.0.1`: клиент — 3020, API — 3021. nginx отдаёт домен клиенту, а `/api/` — серверу. Первым выкатывайте сервер: до его деплоя `/api/` отвечает 502.
+
+Откат: поменяйте `VERSION` в `.deploy.env` на прошлую версию и выполните в `DEPLOY_DIR` `docker compose --env-file .deploy.env -f compose.prod.yaml up -d --wait`.
+
 ## Архитектура (FSD)
 
 ```

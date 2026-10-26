@@ -13,3 +13,6 @@ playwright-report/
 # Прочее
 .DS_Store
 .claude/
+
+# Переменные прод-стенда (собирает release-deploy.yml)
+.deploy.env
