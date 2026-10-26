@@ -1,0 +1,101 @@
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: var(--gap);
+  align-items: start;
+}
+
+.mapColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sideTitle {
+  font: var(--text-h3);
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap);
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  border-radius: var(--radius-card);
+  background: var(--gray-100);
+  color: var(--gray-950);
+  transition: background-color 0.15s;
+}
+
+.tile:hover {
+  background: var(--brand-25);
+  color: var(--gray-950);
+}
+
+.tileIcon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background: var(--white);
+  color: var(--brand-600);
+}
+
+.tileTitle {
+  font: var(--text-h3);
+}
+
+.tileText {
+  font: var(--text-small);
+  color: var(--gray-800);
+}
+
+.drawerActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.updating {
+  font: var(--text-caption);
+  color: var(--gray-label);
+}
+
+@media (max-width: 1199px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 899px) {
+  .tiles {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

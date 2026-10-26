@@ -1,0 +1,15 @@
+# Node
+node_modules/
+dist/
+
+# Тесты
+test-results/
+playwright-report/
+
+# Секреты
+.env
+.env.local
+
+# Прочее
+.DS_Store
+.claude/

@@ -1,0 +1,24 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px 24px;
+}
+
+.title {
+  font: var(--text-h2);
+}
+
+.lead {
+  margin-top: 4px;
+  font: var(--text-small);
+  color: var(--gray-800);
+  max-width: 720px;
+}

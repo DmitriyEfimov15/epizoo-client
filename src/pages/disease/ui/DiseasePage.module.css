@@ -1,0 +1,90 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 420px;
+  gap: 48px var(--gap);
+  align-items: start;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.description {
+  font: var(--text-body);
+}
+
+.symptoms {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.symptoms li {
+  padding: 16px;
+  border-radius: var(--radius-tile);
+  background: var(--gray-100);
+  font: var(--text-small);
+}
+
+.steps {
+  counter-reset: step;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.steps li {
+  counter-increment: step;
+  display: flex;
+  gap: 16px;
+}
+
+.steps li::before {
+  content: counter(step);
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: var(--white);
+  font: var(--text-body-m);
+}
+
+.source {
+  display: block;
+  margin-top: 4px;
+  font: var(--text-caption);
+}
+
+.sideTitle {
+  font: var(--text-h3);
+  margin-bottom: 4px;
+}
+
+.sideLead {
+  font: var(--text-small);
+  color: var(--gray-800);
+  margin-bottom: 16px;
+}
+
+@media (max-width: 1099px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

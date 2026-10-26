@@ -1,0 +1,32 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px 4px 4px;
+  border-radius: 999px;
+  background: var(--white);
+  border: 1px solid var(--gray-300);
+  font: var(--text-caption);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.dot {
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-weight: 500;
+}
+
+.large {
+  padding: 6px 16px 6px 6px;
+  font: var(--text-body-m);
+}
+
+.large .dot {
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+}

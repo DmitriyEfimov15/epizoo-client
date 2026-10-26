@@ -1,0 +1,80 @@
+.chart {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font: var(--text-caption);
+  color: var(--gray-800);
+}
+
+.legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.tooltip {
+  padding: 10px 12px;
+  border-radius: var(--radius-tile);
+  background: var(--white);
+  box-shadow: var(--shadow-popup);
+  font: var(--text-small);
+}
+
+.tooltip p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tooltip b {
+  margin-left: auto;
+  padding-left: 12px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.tooltipTitle {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.table summary {
+  cursor: pointer;
+  font: var(--text-small);
+  color: var(--brand-600);
+}
+
+.table table {
+  margin-top: 8px;
+  width: 100%;
+  border-collapse: collapse;
+  font: var(--text-small);
+}
+
+.table th,
+.table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--gray-200);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.table th:first-child,
+.table td:first-child {
+  text-align: left;
+}

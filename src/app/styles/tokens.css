@@ -1,0 +1,97 @@
+/* Дизайн-токены сервиса: шрифт, палитра, радиусы, тени, сетка. */
+:root {
+  /* Бренд */
+  --brand: #1ccb01;
+  --brand-600: #00bb00;
+  --brand-900: #006f00;
+  --brand-950: #023e02;
+  --brand-400: #55d440;
+  --brand-300: #7cdc67;
+  --brand-200: #a5e695;
+  --brand-100: #caf0bf;
+  --brand-50: #eafae5;
+  --brand-25: #f1f9ef;
+
+  /* Серые */
+  --gray-950: #171a1c;
+  --gray-900: #2f3337;
+  --gray-800: #464d53;
+  --gray-label: #95a0a9;
+  --gray-400: #c8ccd0;
+  --gray-300: #e3e5e8;
+  --gray-200: #ecedef;
+  --gray-100: #f6f7f8;
+  --gray-25: #fcfcfd;
+  --white: #ffffff;
+
+  /* Состояния */
+  --error-800: #d80e0e;
+  --error-200: #fc9893;
+  --error-100: #ffcccf;
+  --error-50: #ffebed;
+  --warning-500: #e6b200;
+  --warning-600: #e6a500;
+  --warning-850: #ff6d00;
+  --warning-900: #e66400;
+  --warning-200: #f1d77c;
+  --warning-50: #fcf6df;
+  --info-500: #0894ff;
+  --info-700: #2072eb;
+  --info-50: #e3f2ff;
+
+  /* Шкала значимости 0–5: светлота монотонно падает, соседние ступени различимы при дальтонизме
+     (OKLab ΔE ≥ 8,9 для нормального зрения, дейтеранопии и протанопии). */
+  --level-0: #ecedef;
+  --level-1: #ffe9a8;
+  --level-2: #fbc34e;
+  --level-3: #f28a1e;
+  --level-4: #d94810;
+  --level-5: #9e1a0c;
+
+  /* Серии графиков (проверены валидатором dataviz: CVD ΔE 30) */
+  --series-set: #e66400;
+  --series-lifted: #2072eb;
+
+  /* Типографика */
+  --font: 'Onest', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --text-h1: 500 40px/40px var(--font);
+  --text-h2: 500 24px/32px var(--font);
+  --text-h3: 500 20px/28px var(--font);
+  --text-body: 400 16px/24px var(--font);
+  --text-body-m: 500 16px/20px var(--font);
+  --text-small: 400 14px/20px var(--font);
+  --text-caption: 400 12px/16px var(--font);
+
+  /* Форма */
+  --radius-tile: 12px;
+  --radius-control: 16px;
+  --radius-card: 24px;
+  --radius-popup: 40px;
+  --shadow-header: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --shadow-popup: 0 4px 20px rgba(0, 0, 0, 0.25);
+
+  /* Сетка */
+  --container: 1280px;
+  --gutter: 40px;
+  --gap: 24px;
+  --header-height: 88px;
+
+  --focus-ring: 0 0 0 3px rgba(28, 203, 1, 0.35);
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --gutter: 24px;
+    --gap: 16px;
+    --text-h1: 500 32px/36px var(--font);
+  }
+}
+
+@media (max-width: 599px) {
+  :root {
+    --gutter: 16px;
+    --text-h1: 500 26px/32px var(--font);
+    --text-h2: 500 20px/28px var(--font);
+    --header-height: 64px;
+  }
+}

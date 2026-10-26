@@ -1,0 +1,43 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font: var(--text-caption);
+  color: var(--gray-label);
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.item + .item::before {
+  content: '/';
+  color: var(--gray-400);
+}
+
+.link {
+  color: var(--gray-800);
+}
+
+.link:hover {
+  color: var(--brand-600);
+}
+
+.inverse,
+.inverse .link {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.inverse .item + .item::before {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.inverse .link:hover {
+  color: var(--white);
+}

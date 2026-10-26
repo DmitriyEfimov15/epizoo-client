@@ -1,0 +1,30 @@
+import type { components } from './schema'
+
+/** DTO из OpenAPI бэкенда. Перегенерация: npm run api:types. */
+type Schemas = components['schemas']
+
+export type DashboardDto = Schemas['DashboardOut']
+export type DigestDto = Schemas['DigestOut']
+export type DiseaseDto = Schemas['DiseaseOut']
+export type EventDto = Schemas['EventOut']
+export type EventPageDto = Schemas['EventPage']
+export type FarmInDto = Schemas['FarmIn']
+export type FarmDto = Schemas['FarmOut']
+export type HistoryPointDto = Schemas['HistoryPoint']
+export type MapRegionDto = Schemas['MapRegion']
+export type MetaDto = Schemas['MetaOut']
+export type OfferDto = Schemas['OfferOut']
+export type QuarantineDto = Schemas['QuarantineOut']
+export type RecommendationDto = Schemas['Recommendation']
+export type RegionDto = Schemas['RegionOut']
+export type RegionRefDto = Schemas['RegionRef']
+export type RouteResultDto = Schemas['RouteResult']
+export type SpeciesRefDto = Schemas['SpeciesRef']
+export type SubscriptionInDto = Schemas['SubscriptionIn']
+export type SubscriptionDto = Schemas['SubscriptionOut']
+export type SummaryDto = Schemas['SummaryOut']
+export type TelegramLinkDto = Schemas['TelegramLink']
+
+export type SpeciesSlug = SpeciesRefDto['slug']
+export type EventKind = EventDto['kind']
+export type RouteVerdict = RouteResultDto['verdict']

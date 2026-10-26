@@ -1,0 +1,13 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-top: 32px;
+}
+
+@media (max-width: 599px) {
+  .body {
+    gap: 32px;
+    padding-top: 24px;
+  }
+}

@@ -1,0 +1,119 @@
+.wrap {
+  position: relative;
+  border-radius: var(--radius-card);
+  background: var(--gray-100);
+  overflow: hidden;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  touch-action: none;
+  cursor: grab;
+}
+
+.svg:active {
+  cursor: grabbing;
+}
+
+.region {
+  stroke: var(--white);
+  stroke-width: 0.7;
+  vector-effect: non-scaling-stroke;
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+
+.region:hover {
+  filter: brightness(0.92);
+  stroke: var(--gray-900);
+  stroke-width: 1.2;
+}
+
+.selected {
+  stroke: var(--gray-950);
+  stroke-width: 2.4;
+}
+
+.dimmed {
+  opacity: 0.45;
+}
+
+.controls {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.control {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--gray-300);
+  border-radius: 12px;
+  background: var(--white);
+  color: var(--gray-900);
+  cursor: pointer;
+}
+
+.control:hover {
+  border-color: var(--brand);
+  color: var(--brand-600);
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+  width: max-content;
+  min-width: 200px;
+  max-width: 260px;
+  padding: 12px 14px;
+  border-radius: var(--radius-tile);
+  background: var(--white);
+  box-shadow: var(--shadow-popup);
+  font: var(--text-small);
+}
+
+.tooltipName {
+  font: var(--text-body-m);
+  margin-bottom: 6px;
+}
+
+.tooltipRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--gray-800);
+}
+
+.tooltipRow b {
+  color: var(--gray-950);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.loading {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1000 / 560;
+}
+
+.attribution {
+  padding: 0 12px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font: var(--text-caption);
+  font-size: 10px;
+  color: var(--gray-label);
+}
+
+.attribution a {
+  color: inherit;
+}

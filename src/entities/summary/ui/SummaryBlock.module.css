@@ -1,0 +1,52 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.text {
+  font: var(--text-body);
+  white-space: pre-line;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  align-items: center;
+  font: var(--text-caption);
+  color: var(--gray-label);
+}
+
+.sources {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  font: var(--text-caption);
+}
+
+.sources a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sourceBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.more summary {
+  cursor: pointer;
+  font: var(--text-caption);
+  font-weight: 500;
+  color: var(--brand-600);
+}
+
+.more[open] summary {
+  margin-bottom: 6px;
+}

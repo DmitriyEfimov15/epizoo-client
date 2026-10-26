@@ -1,0 +1,50 @@
+.switch {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  font: var(--text-small);
+}
+
+.switch input {
+  appearance: none;
+  flex: none;
+  width: 44px;
+  height: 24px;
+  margin: 0;
+  border-radius: 12px;
+  background: var(--gray-400);
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.switch input::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--white);
+  transition: transform 0.15s;
+}
+
+.switch input:checked {
+  background: var(--brand);
+}
+
+.switch input:checked::after {
+  transform: translateX(20px);
+}
+
+.switch input:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+
+.hint {
+  display: block;
+  color: var(--gray-label);
+  font: var(--text-caption);
+}

@@ -1,0 +1,25 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+}
+
+.skip {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 100;
+  padding: 12px 20px;
+  border-radius: var(--radius-control);
+  background: var(--brand);
+  color: var(--white);
+}
+
+.skip:focus {
+  top: 16px;
+  color: var(--white);
+}

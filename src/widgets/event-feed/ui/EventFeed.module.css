@@ -1,0 +1,23 @@
+.feed {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.total {
+  font: var(--text-small);
+  color: var(--gray-800);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.more {
+  align-self: center;
+}

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <radialGradient id="bg" cx="35%" cy="25%" r="85%">
+      <stop offset="0" stop-color="#3BE021"/>
+      <stop offset="0.55" stop-color="#1CCB01"/>
+      <stop offset="1" stop-color="#0B8F00"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#064D00" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <!-- Щит: защита хозяйства -->
+  <path filter="url(#shadow)" fill="#FCFCFD"
+        d="M512 206 L748 290 V516 C748 664 650 770 512 826 C374 770 276 664 276 516 V290 Z"/>
+  <!-- Лист: сельское хозяйство -->
+  <path fill="#1CCB01" d="M404 492 C404 384 476 316 622 300 C612 432 546 498 432 504 Z"/>
+  <path d="M446 482 L548 396" stroke="#FCFCFD" stroke-width="16" stroke-linecap="round"/>
+  <!-- Пульс: мониторинг обстановки -->
+  <path d="M336 600 H436 L470 552 L512 668 L552 576 L578 600 H688"
+        fill="none" stroke="#0B8F00" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

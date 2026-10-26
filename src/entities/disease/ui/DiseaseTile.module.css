@@ -1,0 +1,32 @@
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+  padding: 20px;
+  border-radius: var(--radius-card);
+  background: var(--gray-100);
+  color: var(--gray-950);
+  transition: background-color 0.15s;
+}
+
+.tile:hover {
+  background: var(--brand-25);
+  color: var(--gray-950);
+}
+
+.name {
+  font: var(--text-body-m);
+}
+
+.text {
+  font: var(--text-small);
+  color: var(--gray-800);
+  flex: 1;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}

@@ -1,0 +1,27 @@
+.notice {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  border-radius: var(--radius-control);
+  font: var(--text-small);
+}
+
+.notice > svg {
+  flex: none;
+  margin-top: 2px;
+}
+
+.info {
+  background: var(--info-50);
+  color: #173f86;
+}
+
+.warning {
+  background: var(--warning-50);
+  color: #6b4600;
+}
+
+.neutral {
+  background: var(--gray-100);
+  color: var(--gray-800);
+}

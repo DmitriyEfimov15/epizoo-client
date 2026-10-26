@@ -1,0 +1,28 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 40px;
+  padding: 0 16px;
+  border: 1px solid var(--gray-400);
+  border-radius: var(--radius-control);
+  background: var(--white);
+  color: var(--gray-950);
+  font: var(--text-small);
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background-color 0.15s,
+    border-color 0.15s;
+}
+
+.chip:hover {
+  border-color: var(--brand);
+}
+
+.chip[aria-pressed='true'] {
+  background: var(--brand-50);
+  border-color: var(--brand);
+  color: var(--brand-950);
+}

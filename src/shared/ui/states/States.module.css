@@ -1,0 +1,38 @@
+.state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 40px 24px;
+  text-align: center;
+  border-radius: var(--radius-card);
+  background: var(--gray-100);
+}
+
+.compact {
+  padding: 24px 16px;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--gray-800);
+}
+
+.error .icon {
+  color: var(--error-800);
+}
+
+.title {
+  font: var(--text-body-m);
+}
+
+.text {
+  max-width: 480px;
+  font: var(--text-small);
+  color: var(--gray-800);
+}

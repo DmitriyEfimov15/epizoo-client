@@ -1,0 +1,34 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.select {
+  flex: 1 1 200px;
+  min-width: 180px;
+  max-width: 320px;
+}
+
+.period {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font: var(--text-caption);
+  font-weight: 500;
+  color: var(--gray-800);
+}
+
+@media (max-width: 599px) {
+  .select {
+    max-width: none;
+  }
+
+  .period {
+    width: 100%;
+  }
+}

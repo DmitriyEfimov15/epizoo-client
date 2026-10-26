@@ -1,0 +1,97 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 32px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-control);
+  font: var(--text-body-m);
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background-color 0.15s,
+    border-color 0.15s,
+    color 0.15s;
+}
+
+.button:disabled,
+.button[aria-disabled='true'] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.s {
+  height: 40px;
+  padding: 0 20px;
+  font: var(--text-small);
+  font-weight: 500;
+}
+
+.l {
+  height: 56px;
+}
+
+.primary {
+  background: var(--brand);
+  color: var(--gray-25);
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--brand-600);
+  color: var(--gray-25);
+}
+
+.secondary {
+  background: var(--gray-25);
+  border-color: var(--gray-400);
+  color: var(--brand);
+}
+
+.secondary:hover:not(:disabled) {
+  border-color: var(--brand);
+  color: var(--brand-600);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--gray-950);
+  padding: 0 12px;
+}
+
+.ghost:hover:not(:disabled) {
+  background: var(--gray-100);
+  color: var(--gray-950);
+}
+
+.full {
+  width: 100%;
+}
+
+.iconOnly {
+  padding: 0;
+  width: 48px;
+}
+
+.iconOnly.s {
+  width: 40px;
+}
+
+@media (max-width: 599px) {
+  .button:not(.iconOnly) {
+    white-space: normal;
+    text-align: center;
+    height: auto;
+    min-height: 48px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .s:not(.iconOnly) {
+    min-height: 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
