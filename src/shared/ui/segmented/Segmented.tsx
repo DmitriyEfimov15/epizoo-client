@@ -1,5 +1,7 @@
 import { useId } from 'react'
 
+import { cn } from '@/shared/lib'
+
 import styles from './Segmented.module.css'
 
 interface SegmentedProps<T extends string | number> {
@@ -15,17 +17,17 @@ export function Segmented<T extends string | number>({ legend, value, options, o
   return (
     <fieldset className={styles.group}>
       <legend className="visually-hidden">{legend}</legend>
-      {options.map((option) => (
-        <label key={String(option.value)} className={styles.option}>
-          <input
-            type="radio"
-            name={name}
-            checked={option.value === value}
-            onChange={() => onChange(option.value)}
-          />
-          <span className={styles.label}>{option.label}</span>
-        </label>
-      ))}
+      {options.map((option) => {
+        const checked = option.value === value
+        return (
+          <label key={String(option.value)} className={styles.option}>
+            <input type="radio" name={name} checked={checked} onChange={() => onChange(option.value)} />
+            {/* Выделение берём из состояния, а не из :checked: iOS Safari не перерисовывает
+                соседний элемент, когда React меняет checked программно, и подсвечивает несколько пунктов. */}
+            <span className={cn(styles.label, checked && styles.selected)}>{option.label}</span>
+          </label>
+        )
+      })}
     </fieldset>
   )
 }
