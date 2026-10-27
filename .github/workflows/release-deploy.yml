@@ -118,7 +118,7 @@ jobs:
             echo "Installing Nginx config..."
 
             NGINX_CONF="/etc/nginx/conf.d/epizoo.conf"
-            NGINX_BACKUP="$DEPLOY_DIR/epizoo.conf.bak"
+            NGINX_BACKUP="$PWD/epizoo.conf.bak"
 
             # Прошлая версия сохраняется: битый конфиг в conf.d сломал бы
             # перезагрузку nginx для всех сайтов сервера.
